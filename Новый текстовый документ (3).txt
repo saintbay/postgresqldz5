@@ -1,0 +1,12 @@
+CREATE TABLE Users (
+    user_id INT PRIMARY KEY,
+    username VARCHAR(50),
+    email VARCHAR(100)
+);
+
+CREATE TABLE Subscriptions (
+    subscription_id INT PRIMARY KEY,
+    user_id INT,
+    newspaper_name VARCHAR(100),
+    FOREIGN KEY (user_id) REFERENCES Users(user_id)
+);
